@@ -19,7 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.assignment7.databinding.FragmentSelectDOBBinding;
+import com.example.assignment08.databinding.FragmentSelectDOBBinding;
 
 import java.util.Calendar;
 

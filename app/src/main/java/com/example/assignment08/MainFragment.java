@@ -17,7 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.assignment7.databinding.FragmentMainBinding;
+import com.example.assignment08.databinding.FragmentMainBinding;
 
 public class MainFragment extends Fragment {
 

@@ -20,7 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.assignment7.databinding.FragmentSelectCountryBinding;
+import com.example.assignment08.databinding.FragmentSelectCountryBinding;
 
 
 public class SelectCountryFragment extends Fragment {
@@ -79,7 +79,7 @@ public class SelectCountryFragment extends Fragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        mListener = (com.example.assignment7.SelectCountryFragment.SelectCountryFragmentListener) context;
+        mListener = (com.example.assignment08.SelectCountryFragment.SelectCountryFragmentListener) context;
     }
 
     interface SelectCountryFragmentListener {
