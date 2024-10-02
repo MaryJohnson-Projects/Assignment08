@@ -1,3 +1,33 @@
 <resources>
-    <string name="app_name">Assignment08</string>
+    <string name="app_name">Assignment7</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcomeTxt">Welcome !!</string>
+    <string name="welcomeBannerTxt">Welcome Banner</string>
+    <string name="startBtnTxt">Start</string>
+    <string name="userInfoTxt">User Info</string>
+    <string name="submitBtnTxt">Submit</string>
+    <string name="selectBtnTxt">Select</string>
+    <string name="selectcBtnTxt">Select</string>
+    <string name="cancelBtnTxt">Cancel</string>
+
+    <string name="nameLabelTxt">Name: </string>
+    <string name="emailLabelTxt">Email: </string>
+    <string name="ageLabelTxt">Age: </string>
+    <string name="DOBLabelTxt">DOB: </string>
+    <string name="countryLabelTxt">Country: </string>
+
+    <string name="nameHintTxt">Enter Name</string>
+    <string name="emailHintTxt">Enter Email</string>
+    <string name="ageHintTxt">Enter Age</string>
+
+    <string name="dobTxt">Date of Birth</string>
+    <string name="dobHint">Select your date of birth: </string>
+
+    <string name="profileTxt">Profile</string>
+
+    <string name="na">N/A</string>
+
+    <string name="countryHeader">Country</string>
+    <string name="txtCountryLabel">Select your country:</string>
 </resources>

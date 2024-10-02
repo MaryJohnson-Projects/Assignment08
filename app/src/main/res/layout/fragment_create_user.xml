@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateUserFragment">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/userInfoTxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/submitBtnTxt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/nameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/nameLabelTxt"
+        app:layout_constraintBottom_toBottomOf="@+id/editName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editName" />
+
+    <TextView
+        android:id="@+id/emailLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/emailLabelTxt"
+        app:layout_constraintBottom_toBottomOf="@+id/editEmail"
+        app:layout_constraintStart_toStartOf="@+id/nameLabel"
+        app:layout_constraintTop_toTopOf="@+id/editEmail" />
+
+    <TextView
+        android:id="@+id/ageLabel"
+        app:layout_constraintBottom_toBottomOf="@+id/editAge"
+        app:layout_constraintStart_toStartOf="@+id/emailLabel"
+        app:layout_constraintTop_toTopOf="@+id/editAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ageLabelTxt" />
+
+    <TextView
+        android:id="@+id/countryLabel"
+        app:layout_constraintBottom_toBottomOf="@+id/selectYourCountry"
+        app:layout_constraintStart_toStartOf="@+id/ageLabel"
+        app:layout_constraintTop_toTopOf="@+id/selectYourCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/countryLabelTxt" />
+
+    <TextView
+        android:id="@+id/DOBLabel"
+        app:layout_constraintBottom_toBottomOf="@+id/selectDOB"
+        app:layout_constraintStart_toStartOf="@+id/countryLabel"
+        app:layout_constraintTop_toTopOf="@+id/selectDOB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/DOBLabelTxt" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/nameHintTxt"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/countryLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/emailHintTxt"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/editName"
+        app:layout_constraintStart_toStartOf="@+id/editName"
+        app:layout_constraintTop_toBottomOf="@+id/editName" />
+
+    <EditText
+        android:id="@+id/editAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/ageHintTxt"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/editName"
+        app:layout_constraintStart_toStartOf="@+id/editEmail"
+        app:layout_constraintTop_toBottomOf="@+id/editEmail" />
+
+    <Button
+        android:id="@+id/selectDOB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/selectBtnTxt"
+        app:layout_constraintEnd_toEndOf="@+id/selectYourCountry"
+        app:layout_constraintTop_toBottomOf="@+id/selectYourCountry" />
+
+    <TextView
+        android:id="@+id/countryValue"
+        app:layout_constraintBottom_toBottomOf="@+id/countryLabel"
+        app:layout_constraintStart_toStartOf="@+id/editAge"
+        app:layout_constraintTop_toTopOf="@+id/countryLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/na" />
+
+    <TextView
+        android:id="@+id/dobValue"
+        app:layout_constraintBottom_toBottomOf="@+id/DOBLabel"
+        app:layout_constraintStart_toStartOf="@+id/countryValue"
+        app:layout_constraintTop_toTopOf="@+id/DOBLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/na" />
+
+    <Button
+        android:id="@+id/selectYourCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/selectBtnTxt"
+        app:layout_constraintEnd_toEndOf="@+id/editAge"
+        app:layout_constraintTop_toBottomOf="@+id/editAge" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
