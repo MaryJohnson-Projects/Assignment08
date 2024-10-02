@@ -27,9 +27,9 @@ public class CreateUserFragment extends Fragment {
         Log.d("demo", "setSelectedDOB: test");
         this.selectedDOB = dob;
     }
-    private String selectedCountry = null;
-    public void setSelectedCountry(String country){
-        this.selectedCountry = country;
+    private String selectedState = null;
+    public void setSelectedState(String country){
+        this.selectedState = country;
     }
 
     public CreateUserFragment() {
@@ -61,7 +61,7 @@ public class CreateUserFragment extends Fragment {
         binding.selectYourCountry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mListener.gotoCountry();
+                mListener.gotoState();
             }
         });
 
@@ -78,12 +78,12 @@ public class CreateUserFragment extends Fragment {
                     Toast.makeText(getActivity(), "Please enter your email", Toast.LENGTH_SHORT).show();
                 } else if (age.isEmpty()) {
                     Toast.makeText(getActivity(), "Please enter your age", Toast.LENGTH_SHORT).show();
-                } else if (selectedCountry == null) {
+                } else if (selectedState == null) {
                     Toast.makeText(getActivity(), "Please select your country", Toast.LENGTH_SHORT).show();
                 } else if (selectedDOB == null) {
                     Toast.makeText(getActivity(), "Please select your date of birth", Toast.LENGTH_SHORT).show();
                 } else {
-                    User user = new User(name, email, age, selectedCountry, selectedDOB);
+                    User user = new User(name, email, age, selectedState, selectedDOB);
                     mListener.gotoProfile(user);
                 }
 
@@ -95,8 +95,8 @@ public class CreateUserFragment extends Fragment {
             Log.d("demo", "!!! dob set !!!");
             binding.dobValue.setText(selectedDOB);
         }
-        if(selectedCountry != null){
-            binding.countryValue.setText(selectedCountry);
+        if(selectedState != null){
+            binding.countryValue.setText(selectedState);
         }
 
     }
@@ -111,7 +111,7 @@ public class CreateUserFragment extends Fragment {
 
     interface CreateUserFragmentListener {
         void gotoDOB();
-        void gotoCountry();
+        void gotoState();
         void gotoProfile(User user);
     }
 }

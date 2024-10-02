@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements
         MainFragment.MainFragmentListener,
         CreateUserFragment.CreateUserFragmentListener,
         SelectDOBFragment.SelectDOBFragmentListener,
-        SelectCountryFragment.SelectCountryFragmentListener {
+        SelectStateFragment.SelectStateFragmentListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +55,9 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void gotoCountry() {
+    public void gotoState() {
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.rootView, new SelectCountryFragment())
+                .replace(R.id.rootView, new SelectStateFragment())
                 .addToBackStack(null)
                 .commit();
     }
@@ -87,18 +87,17 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void sendCountry(String country) {
+    public void sendState(String state) {
         CreateUserFragment fragment = (CreateUserFragment) getSupportFragmentManager().findFragmentByTag("createuser-fragment");
         if (fragment!=null){
-            fragment.setSelectedCountry(country);
+            fragment.setSelectedState(state);
         } else {
             Log.d("demo", "fragmentissue");
         }
         getSupportFragmentManager().popBackStack();
     }
 
-    @Override
-    public void cancelCountry() {
+    public void cancelState() {
         getSupportFragmentManager().popBackStack();
     }
 }

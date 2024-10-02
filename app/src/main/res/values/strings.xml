@@ -15,7 +15,9 @@
     <string name="emailLabelTxt">Email: </string>
     <string name="ageLabelTxt">Age: </string>
     <string name="DOBLabelTxt">DOB: </string>
-    <string name="countryLabelTxt">Country: </string>
+    <string name="countryLabelTxt">State: </string>
+    <string name="mariStatusLabelTxt">Marital Status: </string>
+    <string name="eduLabelTxt">Edu Level: </string>
 
     <string name="nameHintTxt">Enter Name</string>
     <string name="emailHintTxt">Enter Email</string>
@@ -28,6 +30,14 @@
 
     <string name="na">N/A</string>
 
-    <string name="countryHeader">Country</string>
-    <string name="txtCountryLabel">Select your country:</string>
+    <string name="stateHeader">State</string>
+    <string name="txtStateLabel">Select your state:</string>
+
+    <string name="mariHeader">Marital Status</string>
+    <string name="txtMariLabel">Select your marital status:</string>
+
+    <string name="eduHeader">Education</string>
+    <string name="txtEduLabel">Select your education level:</string>
+    <string name="contactHeader">Contact Info</string>
+    <string name="demographics">Demographics</string>
 </resources>

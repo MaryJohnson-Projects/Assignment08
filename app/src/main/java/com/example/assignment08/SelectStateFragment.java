@@ -1,6 +1,6 @@
 /*
     Assignment 07
-    SelectCountryFragment.java
+    SelectStateFragment.java
     Mary Johnson & Cayden Renegar
     Group 18
  */
@@ -20,21 +20,21 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.assignment08.databinding.FragmentSelectCountryBinding;
+import com.example.assignment08.databinding.FragmentSelectStateBinding;
 
 
-public class SelectCountryFragment extends Fragment {
+public class SelectStateFragment extends Fragment {
 
-    public SelectCountryFragment() {
+    public SelectStateFragment() {
         // Required empty public constructor
     }
 
-    FragmentSelectCountryBinding binding;
+    FragmentSelectStateBinding binding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentSelectCountryBinding.inflate(inflater, container, false);
+        binding = FragmentSelectStateBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
@@ -57,7 +57,7 @@ public class SelectCountryFragment extends Fragment {
         binding.cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mListener.cancelCountry();
+                mListener.cancelState();
             }
         });
 
@@ -66,24 +66,24 @@ public class SelectCountryFragment extends Fragment {
             public void onClick(View v) {
                 int radId = binding.radioGroup.getCheckedRadioButtonId();
                 if (radId == -1) {
-                    Toast.makeText(getActivity(), "Please select country", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Please select state", Toast.LENGTH_SHORT).show();
                 } else {
-                    mListener.sendCountry( Data.countries[radId] );
+                    mListener.sendState( Data.countries[radId] );
                 }
             }
         });
     }
 
-    SelectCountryFragmentListener mListener;
+    SelectStateFragmentListener mListener;
 
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        mListener = (com.example.assignment08.SelectCountryFragment.SelectCountryFragmentListener) context;
+        mListener = (com.example.assignment08.SelectStateFragment.SelectStateFragmentListener) context;
     }
 
-    interface SelectCountryFragmentListener {
-        void sendCountry(String dob);
-        void cancelCountry();
+    interface SelectStateFragmentListener {
+        void sendState(String dob);
+        void cancelState();
     }
 }

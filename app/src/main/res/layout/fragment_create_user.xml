@@ -87,7 +87,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toEndOf="@+id/countryLabel"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
         android:id="@+id/editEmail"
@@ -120,7 +120,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/selectBtnTxt"
         app:layout_constraintEnd_toEndOf="@+id/selectYourCountry"
-        app:layout_constraintTop_toBottomOf="@+id/selectYourCountry" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/countryValue"
@@ -148,5 +148,78 @@
         android:text="@string/selectBtnTxt"
         app:layout_constraintEnd_toEndOf="@+id/editAge"
         app:layout_constraintTop_toBottomOf="@+id/editAge" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-8dp"
+        android:text="@string/contactHeader"
+        app:layout_constraintStart_toStartOf="@+id/nameLabel"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-8dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/demographics"
+        app:layout_constraintStart_toStartOf="@+id/countryLabel"
+        app:layout_constraintTop_toBottomOf="@+id/selectYourCountry" />
+
+    <TextView
+        android:id="@+id/mariLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mariStatusLabelTxt"
+        app:layout_constraintBottom_toBottomOf="@+id/selectMari"
+        app:layout_constraintStart_toStartOf="@+id/DOBLabel"
+        app:layout_constraintTop_toTopOf="@+id/selectMari" />
+
+    <TextView
+        android:id="@+id/mariValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/na"
+        app:layout_constraintBottom_toBottomOf="@+id/selectMari"
+        app:layout_constraintStart_toStartOf="@+id/dobValue"
+        app:layout_constraintTop_toTopOf="@+id/selectMari" />
+
+    <Button
+        android:id="@+id/selectMari"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/selectBtnTxt"
+        app:layout_constraintEnd_toEndOf="@+id/selectDOB"
+        app:layout_constraintTop_toBottomOf="@+id/selectDOB" />
+
+    <TextView
+        android:id="@+id/eduLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eduLabelTxt"
+        app:layout_constraintBottom_toBottomOf="@+id/selectedu"
+        app:layout_constraintStart_toStartOf="@+id/DOBLabel"
+        app:layout_constraintTop_toTopOf="@+id/selectedu" />
+
+    <TextView
+        android:id="@+id/eduValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/na"
+        app:layout_constraintBottom_toBottomOf="@+id/selectedu"
+        app:layout_constraintStart_toStartOf="@+id/mariValue"
+        app:layout_constraintTop_toTopOf="@+id/selectedu" />
+
+    <Button
+        android:id="@+id/selectedu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/selectBtnTxt"
+        app:layout_constraintEnd_toEndOf="@+id/selectMari"
+        app:layout_constraintTop_toBottomOf="@+id/selectMari" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
