@@ -20,7 +20,10 @@ public class MainActivity extends AppCompatActivity implements
         MainFragment.MainFragmentListener,
         CreateUserFragment.CreateUserFragmentListener,
         SelectDOBFragment.SelectDOBFragmentListener,
-        SelectStateFragment.SelectStateFragmentListener {
+        SelectStateFragment.SelectStateFragmentListener,
+        SelectMaritalStatusFragment.SelectMaritalStatusFragmentListener,
+        SelectEducationFragment.SelectEducationFragmentListener
+{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +66,22 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
+    public void gotoMarital() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.rootView, new SelectMaritalStatusFragment())
+                .addToBackStack(null)
+                .commit();
+    }
+
+    @Override
+    public void gotoEdu() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.rootView, new SelectEducationFragment())
+                .addToBackStack(null)
+                .commit();
+    }
+
+    @Override
     public void gotoProfile(User user) {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.rootView, ProfileFragment.newInstance(user))
@@ -98,6 +117,38 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     public void cancelState() {
+        getSupportFragmentManager().popBackStack();
+    }
+
+
+    @Override
+    public void sendEducation(String education) {
+        CreateUserFragment fragment = (CreateUserFragment) getSupportFragmentManager().findFragmentByTag("createuser-fragment");
+        if (fragment!=null){
+            fragment.setSelectedEducation(education);
+        } else {
+            Log.d("demo", "fragmentissue");
+        }
+        getSupportFragmentManager().popBackStack();
+    }
+
+    public void cancelEducation() {
+        getSupportFragmentManager().popBackStack();
+    }
+
+    @Override
+    public void sendMaritalStatus(String maritalStatus) {
+        CreateUserFragment fragment = (CreateUserFragment) getSupportFragmentManager().findFragmentByTag("createuser-fragment");
+        if (fragment!=null){
+            fragment.setSelectedMaritalStatus(maritalStatus);
+        } else {
+            Log.d("demo", "fragmentissue");
+        }
+        getSupportFragmentManager().popBackStack();
+    }
+
+    @Override
+    public void cancelMaritalStatus() {
         getSupportFragmentManager().popBackStack();
     }
 }

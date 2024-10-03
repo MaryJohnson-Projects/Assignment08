@@ -62,7 +62,7 @@ public class ProfileFragment extends Fragment {
         binding.nameValue.setText(mUser.getName());
         binding.emailValue.setText(mUser.getEmail());
         binding.ageValue.setText(mUser.getAge());
-        binding.countryValue.setText(mUser.getCountry());
+        binding.countryValue.setText(mUser.getState());
         binding.dobValue.setText(mUser.getDob());
     }
 }

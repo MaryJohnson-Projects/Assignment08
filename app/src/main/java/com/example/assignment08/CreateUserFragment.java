@@ -32,6 +32,15 @@ public class CreateUserFragment extends Fragment {
         this.selectedState = country;
     }
 
+    private String selectedMaritalStatus = null;
+    public void setSelectedMaritalStatus(String maritalStatus){ this.selectedMaritalStatus = maritalStatus; }
+
+    private String selectedEducation = null;
+    public void setSelectedEducation(String education){
+        this.selectedEducation = education;
+    }
+
+
     public CreateUserFragment() {
         // Required empty public constructor
     }
@@ -65,6 +74,20 @@ public class CreateUserFragment extends Fragment {
             }
         });
 
+        binding.selectMari.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.gotoMarital();
+            }
+        });
+
+        binding.selectedu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.gotoEdu();
+            }
+        });
+
         binding.submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,8 +105,12 @@ public class CreateUserFragment extends Fragment {
                     Toast.makeText(getActivity(), "Please select your country", Toast.LENGTH_SHORT).show();
                 } else if (selectedDOB == null) {
                     Toast.makeText(getActivity(), "Please select your date of birth", Toast.LENGTH_SHORT).show();
+                } else if (selectedMaritalStatus == null) {
+                    Toast.makeText(getActivity(), "Please select your marital status", Toast.LENGTH_SHORT).show();
+                } else if (selectedEducation == null) {
+                    Toast.makeText(getActivity(), "Please select your education", Toast.LENGTH_SHORT).show();
                 } else {
-                    User user = new User(name, email, age, selectedState, selectedDOB);
+                    User user = new User(name, email, age, selectedState, selectedDOB, selectedMaritalStatus, selectedEducation);
                     mListener.gotoProfile(user);
                 }
 
@@ -98,6 +125,13 @@ public class CreateUserFragment extends Fragment {
         if(selectedState != null){
             binding.countryValue.setText(selectedState);
         }
+        if(selectedMaritalStatus != null){
+            binding.mariValue.setText(selectedMaritalStatus);
+        }
+        if(selectedEducation != null){
+            binding.eduValue.setText(selectedEducation);
+        }
+
 
     }
 
@@ -109,9 +143,12 @@ public class CreateUserFragment extends Fragment {
         mListener = (CreateUserFragmentListener) context;
     }
 
+
     interface CreateUserFragmentListener {
         void gotoDOB();
         void gotoState();
+        void gotoMarital();
+        void gotoEdu();
         void gotoProfile(User user);
     }
 }

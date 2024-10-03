@@ -1,14 +1,12 @@
-/*
-    Assignment 07
-    SelectStateFragment.java
-    Mary Johnson & Cayden Renegar
-    Group 18
- */
-
 package com.example.assignment08;
 
 import android.content.Context;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,25 +14,21 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
+import com.example.assignment08.databinding.FragmentSelectEducationBinding;
 
-import com.example.assignment08.databinding.FragmentSelectStateBinding;
+public class SelectEducationFragment extends Fragment {
 
 
-public class SelectStateFragment extends Fragment {
-
-    public SelectStateFragment() {
+    public SelectEducationFragment() {
         // Required empty public constructor
     }
 
-    FragmentSelectStateBinding binding;
+    FragmentSelectEducationBinding binding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentSelectStateBinding.inflate(inflater, container, false);
+        binding = FragmentSelectEducationBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
@@ -45,10 +39,10 @@ public class SelectStateFragment extends Fragment {
 
         // Found this method on a Stack Overflow forum
         // https://stackoverflow.com/questions/27836405/create-radiobutton-dynamically-with-string-array
-        for (int i = 0; i < Data.states.length; i++)
+        for (int i = 0; i < Data.education.length; i++)
         {
             RadioButton radioButton = new RadioButton(getActivity());
-            radioButton.setText(Data.states[i]);
+            radioButton.setText(Data.education[i]);
             radioButton.setId(i);
             RadioGroup.LayoutParams params = new RadioGroup.LayoutParams(RadioGroup.LayoutParams.WRAP_CONTENT, RadioGroup.LayoutParams.WRAP_CONTENT);
             binding.radioGroup.addView(radioButton, params);
@@ -57,7 +51,7 @@ public class SelectStateFragment extends Fragment {
         binding.cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mListener.cancelState();
+                mListener.cancelEducation();
             }
         });
 
@@ -66,24 +60,24 @@ public class SelectStateFragment extends Fragment {
             public void onClick(View v) {
                 int radId = binding.radioGroup.getCheckedRadioButtonId();
                 if (radId == -1) {
-                    Toast.makeText(getActivity(), "Please select state", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Please select education", Toast.LENGTH_SHORT).show();
                 } else {
-                    mListener.sendState( Data.states[radId] );
+                    mListener.sendEducation( Data.education[radId] );
                 }
             }
         });
     }
 
-    SelectStateFragmentListener mListener;
+    SelectEducationFragment.SelectEducationFragmentListener mListener;
 
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        mListener = (com.example.assignment08.SelectStateFragment.SelectStateFragmentListener) context;
+        mListener = (com.example.assignment08.SelectEducationFragment.SelectEducationFragmentListener) context;
     }
 
-    interface SelectStateFragmentListener {
-        void sendState(String dob);
-        void cancelState();
+    interface SelectEducationFragmentListener {
+        void sendEducation(String education);
+        void cancelEducation();
     }
 }
